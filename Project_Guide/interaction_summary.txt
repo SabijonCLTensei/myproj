@@ -1,0 +1,70 @@
+# PROJECT SETUP & GITHUB GUIDE
+
+This document summarizes our interaction and provides a step-by-step guide for running your project and linking it to GitHub.
+
+---
+
+## 1. HOW TO RUN THE PROJECT (Project2nd-main)
+
+### Step 1: Clear the Port
+If the server fails to start because "Address already in use", run:
+`taskkill /F /PID <PID_NUMBER>` (You can find the PID using `netstat -ano | findstr :5001`)
+
+### Step 2: Database Setup
+1. Open terminal in `D:\ako rani\Project2nd-main\server`.
+2. Ensure your `.env` file has the correct MySQL credentials:
+   - `DB_USER=root`
+   - `DB_PASSWORD={csO7CI_32UJ`
+3. Initialize the database:
+   `npm run init-db`
+
+### Step 3: Start the Server
+`npm start`
+Access the app at: **http://localhost:5001**
+
+---
+
+## 2. GITHUB LINKING GUIDE (Step-by-Step)
+
+If you are starting a new project or linking to a new repo:
+
+### Step A: Initialize Git
+```powershell
+cd "D:\your-project-folder"
+git init
+git add .
+git config user.email "your-email@example.com"
+git commit -m "Initial commit"
+git branch -M main
+```
+
+### Step B: Fix Permission Denied (403 Error)
+If GitHub thinks you are someone else (`iprincessclaryzejoy-wq`):
+1. Open **Start Menu** -> Search **"Credential Manager"**.
+2. Go to **Windows Credentials**.
+3. Remove any entry starting with `git:https://github.com`.
+4. Run this command to force your specific account:
+   `git remote add origin https://SabijonCLTensei@github.com/SabijonCLTensei/UpdatedProject2nd.git`
+
+### Step C: Push to GitHub
+```powershell
+git push -u origin main
+```
+
+---
+
+## 3. HOW TO UPDATE GITHUB IN THE FUTURE
+When you make changes to your code, run these three commands:
+1. `git add .` (Prepare the changes)
+2. `git commit -m "Added a new feature"` (Save the changes)
+3. `git push` (Upload to GitHub)
+
+---
+
+## 4. TROUBLESHOOTING CATEGORIES
+If categories are not showing:
+1. Ensure the server is running.
+2. In the Sidebar, click **"Categories"**.
+3. Add a new category using the input box if the list is empty.
+4. When creating a note, use the **dropdown menu** to assign the category.
+5. Click the category name in the list to filter notes.
